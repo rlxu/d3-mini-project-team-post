@@ -1,4 +1,4 @@
-## D3 Mini Project (Example version)
+## D3 Mini Project
 
 This mini project serves as an intro to working with APIs and creating data visualizations using D3. In a team, you will be creating a single page React app collage that summarizes some aspects of your assigned API in various visual formats. 
 
