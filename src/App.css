@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color: #101114;
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
-  background-color: #FFFFFF;
 }
 
 .App-header {
@@ -27,7 +33,6 @@
   min-height: 700px;
   min-width: 700px;
   padding: 16px;
-  border: solid 1px grey;
 }
 
 .Chart-title {
