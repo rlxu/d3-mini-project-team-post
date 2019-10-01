@@ -165,7 +165,7 @@ class StreamChart extends Component {
     var y = d3.scaleLinear()
         .domain([-maxInHistogram/6, maxInHistogram/6])
         .range([height, 0]);
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+    const colorScale = d3.scaleOrdinal().domain(["2013", "2014", "2015", "2016"]).range(["#EBFAEC", "#C5F2C7", "#89E28E", "#2BD134"]);
       
     // append the svg object to the body of the page
     // append a 'group' element to 'svg'
@@ -183,18 +183,20 @@ class StreamChart extends Component {
         .call(d3.axisBottom(x).tickSize(-height * 0.8).tickValues([2,3,4,5,6,7,8,9,10,11,12]))
         .select(".domain").remove();
     svg.selectAll(".tick line")
-        .attr("stroke", "#b8b8b8")
+        .attr("stroke", "#C2C2C4")
     let monthLabels = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     svg.selectAll(".tick text")
         .data(monthLabels)
-        .text( d => d );
+        .text( d => d )
+        .style("color", "#C2C2C4");
     
     // Add X axis label:
     svg.append("text")
         .attr("text-anchor", "end")
         .attr("x", width)
         .attr("y", height )
-        .text("Time of Year");
+        .text("Time of Year")
+        .style("fill", "#C2C2C4");
 
       // create a tooltip
     let Tooltip = svg
@@ -203,13 +205,14 @@ class StreamChart extends Component {
       .attr("y", 0)
       .style("opacity", 0)
       .style("font-size", 17)
+      .style("fill", "#C2C2C4")
 
     // Three function that change the tooltip when user hover / move / leave a cell
     let mouseover = function(d) {
       Tooltip.style("opacity", 1)
       d3.selectAll(".myArea").style("opacity", .2)
       d3.select(this)
-        .style("stroke", "black")
+        .style("stroke", "white")
         .style("opacity", 1)
     }
     let mousemove = function(d,i) {
