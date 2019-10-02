@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import StreamChart from './StreamChart';
+import WordFrequency from './WordFrequency';
 
 
 const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://cors-anywhere.herokuapp.com/http://ufo-api.herokuapp.com/api/sightings/search?limit=20000";
@@ -28,9 +29,10 @@ class DataFetch extends Component {
   render() {
       // console.log(this.state.ufoData)
       return (
-    	    <div>
-            <StreamChart data={this.state.ufoData} />
-	        </div>
+          <div>
+            <StreamChart data={this.state.ufoData}/>
+            <WordFrequency data={this.state.ufoData}/>
+          </div>
       );
   }
 }
