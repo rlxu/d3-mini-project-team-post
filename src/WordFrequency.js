@@ -127,7 +127,7 @@ class WordFrequency extends Component {
     icons.append("text")
         .on("mouseover", function(d){ updateText("p", d[2]); })
 		.attr("x", function(d, i){ return ((i%10 + 1) * (fontSize + 1 + iconSpace)) - fontSize;})
-		.attr("y", function(d, i){ if(i%10 == 0){row++}; return row * fontSize;})
+		.attr("y", function(d, i){ if(i%10 === 0){row++}; return row * fontSize;})
 		.attr('font-family', 'FontAwesome')
 		.attr('font-size', fontSize)
 		.attr("fill", function(d){ return color(d);})
@@ -167,7 +167,12 @@ class WordFrequency extends Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node} width={800} height={400} />
+    return (
+        <div>
+            <h3 className="map-title">Shapes of the UFO Sightings</h3>
+            <svg ref={node => this.node = node} width={800} height={400} />
+        </div>
+    );
   }
   
 }

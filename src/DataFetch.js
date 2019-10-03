@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import Map from './Map';
 import StreamChart from './StreamChart';
 import WordFrequency from './WordFrequency';
 
 
-const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://cors-anywhere.herokuapp.com/http://ufo-api.herokuapp.com/api/sightings/search?limit=20000";
+const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://cors-anywhere.herokuapp.com/http://ufo-api.herokuapp.com/api/sightings/search?limit=10000";
 
 class DataFetch extends Component {
 	constructor() {
     super();
  		this.state = {
-            ufoData: {}
+            ufoData: []
         }
     }
 
   componentDidMount() {
-    var referenceToOriginalThis = this
+    var that = this
     axios.get(API_SERVER_HOST)
       .then(function (response) {
-        referenceToOriginalThis.setState( {ufoData: response.data.sightings} )
+        that.setState( {ufoData: response.data.sightings} )
       })
       .catch(function (error) {
         console.log(error);
@@ -29,9 +30,10 @@ class DataFetch extends Component {
   render() {
       // console.log(this.state.ufoData)
       return (
-          <div>
-            <StreamChart data={this.state.ufoData}/>
-            <WordFrequency data={this.state.ufoData}/>
+          <div className={"container"}>
+            <StreamChart className={"streamchart"} data={this.state.ufoData}/>
+            <WordFrequency className={"wordfreq"} data={this.state.ufoData}/>
+            <Map className={"map"} data={this.state.ufoData}/>
           </div>
       );
   }

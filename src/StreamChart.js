@@ -71,7 +71,7 @@ class StreamChart extends Component {
       }
     }
 
-
+    
     //calcuate maximum total sightings on a day in histogram (coded retroactively so histogram is set up badly for this)
     let frequencyOfSightings = {};
     for (let year in histogram){
@@ -105,7 +105,7 @@ class StreamChart extends Component {
     }
     */
 
-    console.log(histogram);
+    // console.log(histogram);
     //generate dense array for stacking
     
     //finds all days that have data
@@ -263,7 +263,12 @@ class StreamChart extends Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node} width={800} height={400} />
+    return (
+      <div className="stream-container">
+          <h3 className="stream-title">Number of Sightings Over Various Years</h3>
+          <svg ref={node => this.node = node} width={800} height={400} />
+      </div>
+  );
   }
   
 }
