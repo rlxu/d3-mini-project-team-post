@@ -167,7 +167,12 @@ class WordFrequency extends Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node} width={800} height={400} />
+    return (
+        <div>
+            <h3 className="map-title">Shapes of the UFO Sightings</h3>
+            <svg ref={node => this.node = node} width={800} height={400} />
+        </div>
+    );
   }
   
 }

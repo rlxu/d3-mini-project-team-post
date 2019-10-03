@@ -263,7 +263,12 @@ class StreamChart extends Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node} width={800} height={400} />
+    return (
+      <div className="stream-container">
+          <h3 className="stream-title">Number of Sightings Over Various Years</h3>
+          <svg ref={node => this.node = node} width={800} height={400} />
+      </div>
+  );
   }
   
 }

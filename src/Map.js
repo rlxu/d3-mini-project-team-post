@@ -112,6 +112,7 @@ class Map extends Component {
   render() {
     return (
       <div className="map-container">
+        <h3 className="map-title">Number of UFO Sightings Across the US</h3>
         <svg className={"map"} width={1000} height={600} viewBox="0 0 800 450">
           <g className={"states"}>
             {topojson.feature(us, us.objects.states).features.map((d, i) => (
@@ -119,11 +120,14 @@ class Map extends Component {
                 key={`path-${i}`}
                 d={d3.geoPath().projection(this.projection())(d)}
                 className="states"
-                stroke="#101114"
-                fill={ `rgba(84, 255, 180,${this.createColor(i)})` }
+                stroke="#27292e"
+                fill={ `rgba(137, 226, 142,${this.createColor(i)})` }
                 strokeWidth={0.5}
               />
             ))}
+          </g>
+          <g className={"legend"}>
+
           </g>
         </svg>
       </div>

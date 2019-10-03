@@ -5,12 +5,10 @@ import DataFetch from './DataFetch';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Hello Team Post!
-      </header>
-      <p className="App-desc">
-        Insert your own visualizations below!
-      </p>
+      <div></div>
+      <h1 className="App-header">
+        UFO 👽 SIGHTINGS: DATA VISUALIZATION
+      </h1>
       <div className="App-content">
         <DataFetch />
       </div>
