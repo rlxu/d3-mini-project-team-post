@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
 import DataFetch from './DataFetch';
-import Map from './Map';
 
 function App() {
   return (
     <div className="App">
-      <DataFetch />
+      <header className="App-header">
+        Hello Team Post!
+      </header>
+      <p className="App-desc">
+        Insert your own visualizations below!
+      </p>
+      <div className="App-content">
+        <DataFetch />
+      </div>
     </div>
   );
 }
