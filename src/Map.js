@@ -126,9 +126,6 @@ class Map extends Component {
               />
             ))}
           </g>
-          <g className={"legend"}>
-
-          </g>
         </svg>
       </div>
     );
