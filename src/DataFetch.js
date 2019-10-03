@@ -30,10 +30,10 @@ class DataFetch extends Component {
   render() {
       // console.log(this.state.ufoData)
       return (
-          <div>
-            <StreamChart data={this.state.ufoData}/>
-            <WordFrequency data={this.state.ufoData}/>
-            <Map data={this.state.ufoData}/>
+          <div className={container}>
+            <StreamChart className={streamchart} data={this.state.ufoData}/>
+            <WordFrequency className={wordfreq} data={this.state.ufoData}/>
+            <Map className={map} data={this.state.ufoData}/>
           </div>
       );
   }

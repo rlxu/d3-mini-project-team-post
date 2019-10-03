@@ -82,19 +82,17 @@ class Map extends Component {
             console.log(max);
             
             if (data[index].numberSightings > (max * 0.9)) {
-                return '#14ff99';
-            } else if (data[index].numberSightings > (max * 0.75)) {
-                return '#14db85';
-            } else if (data[index].numberSightings > (max * 0.6)) {
-                return '#11ba71';
-            } else if (data[index].numberSightings > (max * 0.45)) {
-                return '#0ea15f';
+                return 1;
+            } else if (data[index].numberSightings > (max * 0.7)) {
+                return 0.9;
+            } else if (data[index].numberSightings > (max * 0.5)) {
+                return 0.7;
             } else if (data[index].numberSightings > (max * 0.3)) {
-                return '#107849';
-            } else if (data[index].numberSightings > (max * 0.15)) {
-                return '#095231';
+                return 0.5;
+            } else if (data[index].numberSightings > (max * 0.1)) {
+                return 0.4;
             } else {
-                return '#032918';
+                return 0.2;
             }
         }
     }
@@ -122,7 +120,7 @@ class Map extends Component {
                 d={d3.geoPath().projection(this.projection())(d)}
                 className="states"
                 stroke="#101114"
-                fill={this.createColor(i)}
+                fill={ `rgba(84, 255, 180,${this.createColor(i)})` }
                 strokeWidth={0.5}
               />
             ))}
