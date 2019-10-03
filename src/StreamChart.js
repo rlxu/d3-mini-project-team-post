@@ -71,7 +71,7 @@ class StreamChart extends Component {
       }
     }
 
-
+    
     //calcuate maximum total sightings on a day in histogram (coded retroactively so histogram is set up badly for this)
     let frequencyOfSightings = {};
     for (let year in histogram){

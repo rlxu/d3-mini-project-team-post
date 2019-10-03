@@ -6,7 +6,7 @@ import StreamChart from './StreamChart';
 import WordFrequency from './WordFrequency';
 
 
-const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://cors-anywhere.herokuapp.com/http://ufo-api.herokuapp.com/api/sightings/search?limit=100";
+const API_SERVER_HOST = process.env.REACT_APP_API_SERVER_HOST || "https://cors-anywhere.herokuapp.com/http://ufo-api.herokuapp.com/api/sightings/search?limit=10000";
 
 class DataFetch extends Component {
 	constructor() {
